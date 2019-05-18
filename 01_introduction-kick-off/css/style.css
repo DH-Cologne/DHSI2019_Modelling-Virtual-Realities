@@ -1,0 +1,25 @@
+.captioned-image-row {
+    display: flex;
+    margin-bottom: 30px !important;
+}
+
+.captioned-image-row.small img {
+    max-height: 128px !important;
+    max-width: 128px !important;
+}
+
+.captioned-image-row div {
+    align-items: center;
+    display: flex;
+    flex: 1;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.reveal section img {
+    border: 2px solid #fff;
+}
+
+ul {
+    list-style-type: square !important;
+}
