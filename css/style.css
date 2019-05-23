@@ -31,3 +31,17 @@ ul {
 h1, h2, h3, h4, h5, h6 {
     font-weight: lighter !important;
 }
+
+.intro {
+    line-height: .5 !important;
+}
+
+.subline {
+    color: #00afe7 !important;
+}
+
+.imageslide img {
+    width: 300px;
+    background: #fff !important;
+    display: inline-block;
+}
