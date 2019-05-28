@@ -1,0 +1,252 @@
+<!doctype html>
+<html lang="de">
+
+<head>
+    <meta charset="utf-8">
+
+    <title>Digital Humanities Summer Institute 2019 | Modelling. Virtual. Realities.</title>
+
+    <meta name="author" content="Zoe Schubert, Jan G. Wieners">
+
+    <link rel="stylesheet" href="css/reveal.css">
+    <link rel="stylesheet" href="css/theme/black.css">
+
+    <link rel="stylesheet" href="lib/css/zenburn.css">
+    <link rel="stylesheet" href="css/style.css">
+
+    <script>
+        var link = document.createElement('link');
+        link.rel = 'stylesheet';
+        link.type = 'text/css';
+        link.href = window.location.search.match(/print-pdf/gi) ? 'css/print/pdf.css' : 'css/print/paper.css';
+        document.getElementsByTagName('head')[0].appendChild(link);
+    </script>
+
+    <!--[if lt IE 9]>
+    <script src="lib/js/html5shiv.js"></script>
+    <![endif]-->
+</head>
+
+<body>
+
+<div class="reveal">
+
+    <div class="slides">
+
+        <section data-background="assets/img/*.jpg">
+            <h2>Modelling. Virtual. Realities.</h2>
+            <h5>A Practical Introduction to Virtual (and Augmented) Reality</h5>
+            <p class="intro">
+                <small>
+                    Zoe Schubert MA & Dr. Jan G. Wieners<br>
+                    Institute for Digital Humanities, University of Cologne, Germany
+                </small>
+                <br>
+                <br>
+                <small>
+                    Digital Humanities Summer Institute 2019
+                    <br>
+                    University of Victoria, Canada
+                </small>
+            </p>
+            <h6 class="subline">June 03, 2019 / WebXR – Technology Stack, Libraries, Frameworks</h6>
+        </section>
+
+        <section>
+            <h2>Overview</h2>
+            <ul>
+                <li>Tools for implementing VR and AR applications</li>
+                <li>A (very) short history of web-based VR</li>
+                <li>State of the art (2019) in web-based VR: Libraries and Frameworks</li>
+                <li>Hands-on: Your (maybe) first web-based VR application</li>
+            </ul>
+        </section>
+
+        <section>
+            <section>
+                <h2>Tools for implementing VR and AR applications</h2>
+            </section>
+            <section>
+                <iframe width="800" height="600" src="https://www.youtube.com/embed/z4g-hKQ-2ag?start=35"
+                        frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+                        allowfullscreen></iframe>
+
+                <aside class="notes">
+                    Great: Fully-fledged integrated development environment plus a lot of assets and plugins.
+                    <br>
+                    Very convenient to work with.
+                </aside>
+            </section>
+            <section>
+                <iframe width="800" height="600" src="https://www.youtube.com/embed/S2eXK025uC4" frameborder="0"
+                        allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+                        allowfullscreen></iframe>
+                <aside class="notes">
+                    Great graphics.
+                </aside>
+            </section>
+            <section data-background="assets/img/uncool.gif">
+                <aside class="notes">
+                    Not so great: Proprietary, closed systems, users have to install plugins.
+                </aside>
+            </section>
+            <section data-background="assets/img/webxr-device-api.jpg">
+                <aside class="notes">
+                    W3C (World Wide Web Consortium) and Mozilla Foundation and other actors are suggested WebVR which is
+                    now WebXR.
+                </aside>
+            </section>
+            <section>
+                <iframe width="800" height="600" src="https://showroom.littleworkshop.fr/" frameborder="0"
+                        allowfullscreen></iframe>
+            </section>
+            <section>
+                <iframe width="800" height="600" src="https://blacklodge.hki.uni-koeln.de/builds/Kompakkt/live/"
+                        frameborder="0" allowfullscreen></iframe>
+            </section>
+        </section>
+
+        <section>
+            <section>
+                <h2>A (very) short history of web-based VR</h2>
+            </section>
+            <section>
+                <h3>VRML</h3>
+                <ul>
+                    <li>Raggett, Dave (1994): „Extending WWW to support Platform Independent Virtual Reality“</li>
+                    <li>1994: v1.0, 1997: VRML97 (VRML2 / VRML 2.0)</li>
+                    <li>Needed a browser-plugin</li>
+                </ul>
+
+                <h3>X3D</h3>
+                <ul>
+                    <li>(VRML-Consortium -> Web3D Consortium)</li>
+                    <li>Official successor of VRML</li>
+                    <li>2004: ISO-Standard</li>
+                </ul>
+                <aside class="notes">
+                    Modelling Language
+                    Bestrebungen, browserbasierte 3D-Umgebungen und VR zu ermöglichen
+                    Begriff VRML geht auf Dave Raggett zurück, der ihn in seinem Paper verwendet, das auf der ersten
+                    World Wide Web Conference, 1994 eingereicht wurde
+                    Namensänderung Konsortium
+                    Seit Ende 2004 als offener ISO-Standard spezifiziert
+                </aside>
+            </section>
+            <section>
+                <pre>
+                    <code class="hljs">
+#VRML V2.0 utf8
+# A Cylinder
+     Shape {
+         appearance Appearance {
+             material Material {
+                diffuseColor 0.75 0.5 1.0
+                specularColor 0.7 0.7 0.8
+                shininess 0.1
+             }
+         }
+         geometry Cylinder {
+             height 0.2
+             radius 3.
+         }
+     }
+# A Sphere
+    Shape {
+         appearance Appearance {
+             material Material {
+             diffuseColor 0.2 0.5 0.75
+             transparency 0.0
+	     }
+         }
+    geometry Sphere {
+        radius 1.0
+    }
+}
+                </code>
+                </pre>
+                <aside class="notes">
+                    With a bit of code (to be exactly:) markup, you were able to create a basic scene.
+                </aside>
+            </section>
+
+            <section>
+                <img alt="VRML" src="assets/img/vrml.png" class="stretch">
+                <aside class="notes">Which looks like this.</aside>
+            </section>
+        </section>
+
+        <section>
+            <section>
+                <h2>State of the art (2019) in web-based VR: Libraries and Frameworks</h2>
+                <aside class="notes">Starting around 2015: more and more libraries and frameworks for WebVR</aside>
+            </section>
+            <section data-background="assets/img/a-frame.jpg">
+                <aside class="notes">A-Frame, developed since 2015 by Mozilla Foundation</aside>
+            </section>
+            <section data-background="assets/img/react-360.jpg">
+                <aside class="notes">Facebook entered the VR-game in 2017 with React VR, later renamed to "React 360".
+                    "React 360 is a framework for the creation of 3D and VR user interfaces. Built on top of React – a
+                    library designed to simplify the creation of complex UI."
+                </aside>
+            </section>
+            <section data-background="assets/img/babylonjs.jpg">
+                <aside class="notes">
+                    Microsoft started developing Babylon.js in 2013.
+                    "Babylon.js is a real time 3D engine using a JavaScript library for displaying 3D graphics in a web
+                    browser via HTML5.
+                </aside>
+            </section>
+            <section>
+                <img alt="A-Frame Technology Stack" class="stretch" src="assets/img/a-frame-technology-stack.jpg">
+            </section>
+        </section>
+
+    </div>
+</div>
+
+<script src="js/reveal.js"></script>
+
+<script>
+
+    // More info https://github.com/hakimel/reveal.js#configuration
+    Reveal.initialize({
+        controls: true,
+        progress: true,
+        history: true,
+        center: true,
+
+        transition: 'zoom', // none/fade/slide/convex/concave/zoom
+
+        // More info https://github.com/hakimel/reveal.js#dependencies
+        dependencies: [
+            {
+                src: 'lib/js/classList.js', condition: function () {
+                    return !document.body.classList;
+                }
+            },
+            {
+                src: 'plugin/markdown/marked.js', condition: function () {
+                    return !!document.querySelector('[data-markdown]');
+                }
+            },
+            {
+                src: 'plugin/markdown/markdown.js', condition: function () {
+                    return !!document.querySelector('[data-markdown]');
+                }
+            },
+            {
+                src: 'plugin/highlight/highlight.js', async: true, callback: function () {
+                    hljs.initHighlightingOnLoad();
+                }
+            },
+            {src: 'plugin/search/search.js', async: true},
+            {src: 'plugin/zoom-js/zoom.js', async: true},
+            {src: 'plugin/notes/notes.js', async: true}
+        ]
+    });
+
+</script>
+
+</body>
+</html>
