@@ -13,5 +13,4 @@ Exercises:
 - Add image textures to `<a-box>`
 - Add an image texture to `<a-sphere>`
 - Add an image texture to `<a-cone>`
-- Add an image texture to the background, `<a-sky>`
-``
+- Add an image texture to the background, `<a-sky>`. You could use 360° images from Flickr, if you want to: https://www.flickr.com/groups/equirectangular/. 
