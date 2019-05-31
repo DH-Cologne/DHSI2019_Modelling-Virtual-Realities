@@ -1,5 +1,5 @@
 # Textures
-(see A-Frame school: https://aframe.io/aframe-school)
+(source: https://aframe.io/aframe-school)
 
 ## Setting up your scene
 
