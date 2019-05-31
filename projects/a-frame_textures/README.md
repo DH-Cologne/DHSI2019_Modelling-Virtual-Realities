@@ -13,4 +13,5 @@ Exercises:
 - Add image textures to `<a-box>`
 - Add an image texture to `<a-sphere>`
 - Add an image texture to `<a-cone>`
-- Add an image texture to the background, `<a-sky>`. You could use 360° images from Flickr, if you want to: https://www.flickr.com/groups/equirectangular/. 
+- Add an image texture to the background, `<a-sky>`
+- Add a 360° image as a background of your skybox. A good source for 360° images is flickr: https://www.flickr.com/photos/tags/360.
